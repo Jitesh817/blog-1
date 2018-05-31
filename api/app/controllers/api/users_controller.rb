@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
-    
+    include Authenticable
+
+    before_action: authenticate_user, only: [:update]
     def index
         render json: 'hello'
     end
@@ -14,11 +16,17 @@ class Api::UsersController < ApplicationController
     end
 
     def show
-
+        @user = User.find(params[:id])
+        if @user
+            render json: @user, status: 200
+        else
+            render json: {errors: 'No user found'}, status: 404
+        end
     end
 
     def update
-
+        current_user.update_attributes(user_params)
+        render json: current_user
     end
 
     private
