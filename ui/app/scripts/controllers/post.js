@@ -1,5 +1,5 @@
 var postCtrl = function (navBarActive, apiURL, $http, $scope, $state, addPost ,$stateParams) {
-  navBarActive('home');
+  navBarActive('post');
 
   // FUNCTION TO CHANGE VIEW
   var viewPost = function() {

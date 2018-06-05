@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     post '/login' => 'sessions#create'
     delete '/logout' => 'sessions#destroy'
 
+    get '/user' => 'users#logged_in_user'
+
     get 'posts/list' => 'posts#list'
     resources :users, :posts
   end

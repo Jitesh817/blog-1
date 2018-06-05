@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
     include Authenticable
 
-    before_action: authenticate_user, only: [:update]
+    before_action :authenticate_user, only: [:update, :show, :logged_in_user]
     def index
         render json: 'hello'
     end
@@ -15,6 +15,9 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def logged_in_user
+        render json: current_user
+    end
     def show
         @user = User.find(params[:id])
         if @user

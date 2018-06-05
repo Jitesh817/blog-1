@@ -31,7 +31,7 @@ app.factory('AuthService', function ($http, userSession, apiURL) {
 
 
   authService.isValidToken = function (token,callback) {
-    $http.get(apiURL.url +'user/details',{
+    $http.get(apiURL.url +'user',{
       headers:{'Authorization':token}
     })
       .then(function (response) {

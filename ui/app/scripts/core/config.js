@@ -5,7 +5,7 @@ var config = function ($stateProvider, $urlRouterProvider, $locationProvider, $m
   $stateProvider
     .state({
       name:'parent',
-      url:'/parent',
+      url:'/',
       templateUrl: 'views/parent.html',
       controller: 'parentCtrl'
     })
