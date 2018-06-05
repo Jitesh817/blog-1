@@ -1,0 +1,21 @@
+<br>
+<br>
+
+<section class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4">
+  <div class="col-md-12 col-lg-12">
+    <p class="col-md-3 col-lg-3">
+      {{post.text.slice(0,15)}}...
+    </p>
+    <i class="fa fa-clock-o pull-right" ng-show="post.verification == null" aria-hidden="true"></i>
+    <i class="fa fa-ban pull-right" ng-show="post.verification == false" aria-hidden="true"></i>
+    <i class="fa fa-check pull-right" ng-show="post.verification == true" aria-hidden="true"></i>
+  </div>
+  <br>
+  <br>
+  <div class="col-md-12 col-lg-12">
+    {{post.text.slice(0,200)}}
+  </div>
+  <img ng-if="post.image" style="max-height: 100px; max-width: 100px;"/>
+  <br>
+  <hr>
+</section>

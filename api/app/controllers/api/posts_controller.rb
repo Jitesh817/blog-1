@@ -2,8 +2,14 @@ class Api::PostsController < ApplicationController
     include Authenticable
     before_action :authenticate_user
 
+
+    def index
+        posts = Post.where(verification: true).limit(10)
+        render json: posts
+    end
+
     def create
-        post = current_user.post.new(post_params)
+        post = current_user.posts.new(post_params)
         if post.save
             render json: post, status: 201
         else
@@ -12,7 +18,6 @@ class Api::PostsController < ApplicationController
     end
 
     def show
-        # check if his own post
         post = Post.find(params[:id])
         if post.verification
             # post verified- any one can view
@@ -27,8 +32,13 @@ class Api::PostsController < ApplicationController
         end
     end
 
+    def list
+        posts = Post.where(user_id: current_user.id).sort(_id: -1).limit(10)
+        render json: posts, status: 200
+    end
+
     private
     def post_params
-        params.require(:text).permit(:text, :image)
+        params.permit(:text, :image)
     end
 end

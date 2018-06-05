@@ -1,0 +1,9 @@
+<div class="loginPage"  align="center" ng-controller="loginCtrl">
+  <div class="loginHeader"><a href="https://www.iotrek.in/" target="_blank"><img src="../images/logoWhite.png" height="50" width="144"/></a></div>
+  <form class="loginForm">
+    <input type="text" ng-model="credentials.email" name="email" placeholder="Email" required="" autofocus="" class="loginUser"/><br><br>
+    <input type="password" ng-model="credentials.password" name="password" placeholder="Password" required="" class="loginUser"/><br>
+    <br>
+    <button class="loginBtn" type="submit" ng-click="login(credentials)">LOGIN</button>
+  </form>
+</div>

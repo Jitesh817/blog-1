@@ -1,0 +1,176 @@
+body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.innerView{
+  width: 100%;
+  height: 97%;
+  padding-top: 50px;
+}
+.noPad{padding: 0;}
+.pointer{cursor: pointer;}
+.fullHeight{height:100%;}
+.margin5{margin:5px;}
+.loginPage{
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #2ea9e6;
+  padding-top: 13%;
+}
+.loginPage > .loginForm > .radio > label{
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 600;
+  color: #1b6d85;
+}
+
+.loginHeader{
+  background-color: #1b6d85;
+  width: 410px;
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+.loginForm{
+  background-color: white;
+  width: 410px;
+  padding: 2%;
+}
+
+.loginUser{
+  width: 90%;
+  background-color: lightgray;
+  line-height: 40px;
+  border: 1px solid lightgray;
+  text-align: center;
+}
+
+.loginBtn{
+  width: 90%;
+  background-color: #1b6d85;
+  line-height: 40px;
+  color: white;
+  font-size: 20px;
+  border: 1px solid #1b6d85;
+}
+
+.logoutBtn{
+  margin-top: 20px;
+}
+
+
+
+.glyphicon.glyphicon-user {
+  font-size: 200px;
+}
+
+.glyphicon.glyphicon-hdd {
+  font-size: 200px;
+}
+
+.glyphicon.glyphicon-wrench {
+  font-size: 200px;
+}
+
+.modal-body{
+  height: auto;
+}
+
+/*ANGULAR MATERIAL CSS OVERRIDE BEGIN HERE*/
+.md-button._md-nav-button:hover{
+  background-color: #e8e8e8;
+}
+md-toast.md-success-toast-theme .md-toast-content {
+  background-color: #519e50 ;
+}
+
+md-toast.md-fail-toast-theme .md-toast-content{
+  background-color: #b76161 ;
+}
+/*ANGULAR MATERIAL CSS OVERRIDE END HERE*/
+
+/*CSS FOR NAV BAR BEGIN HERE*/
+.navbar{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 2000;
+}
+.navbar-default{
+  background-color: #1a6daf !important;
+  z-index: 50;
+  /*box-shadow: 1px 1px 1px #8d8d8d;*/
+  border-radius: 0;
+  border: none;
+}
+.navbar-header{
+  min-width: 15%;
+}
+.navbar-brand{
+  padding: 0;
+  padding-left: 25px;
+}
+.navItem{
+  height: 52px;
+  line-height: 52px;
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #ffffff;
+  background-color: #1a6daf;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.navItem:hover{
+  background-color: #ffffff;
+  color: #1a6daf;
+}
+/*CSS FOR NAV BAR END HERE*/
+
+@media only screen and (max-width: 767px) {
+  .navbar-inverse {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse
+  { background-color: #222}
+  .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse
+  { background-color: #222}
+}
+
+
+/*CSS FOR LANDING PAGE TABLE END HERE*/
+
+/*CSS FOR SCROLL BAR BEGIN HERE*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+}
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+}
+/*CSS FOR SCROLL BAR END HERE*/
+
+#logoutBtn{
+  color: white;
+  background-color: #1a6daf;
+}
+
+#logoutBtn > a:hover{
+  color: #1a6daf;
+  background-color: #ffffff;
+}
+#logoutBtn > a:visited{
+  color: #1a6daf;
+  background-color: #ffffff;
+}

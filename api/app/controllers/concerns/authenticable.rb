@@ -9,6 +9,6 @@ module Authenticable
     end
     def current_user
         user = User.find_by(auth_token: request.headers['Authorization']) if request.headers['Authorization'].present?
-        user if user && user.token_expiry > Time.now
+        user
     end
 end
