@@ -11,6 +11,7 @@ class Api::PostsController < ApplicationController
     def create
         post = current_user.posts.new(post_params)
         if post.save
+            post.delay.verify_post
             render json: post, status: 201
         else
             render json: {errors: post.errors}, status: 400

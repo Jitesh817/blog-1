@@ -5,5 +5,5 @@
 (function (window) {
   window.__envr = window.__envr || {};
 
-  window.__envr.apiUrl = 'http://localhost:3000/api/'
+  window.__envr.apiUrl = 'http://13.232.64.177/api/'
 }(this));
