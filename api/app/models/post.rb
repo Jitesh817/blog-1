@@ -6,5 +6,5 @@ class Post
     field :image, type: String
     field :verification, type: Boolean, default: nil
     belongs_to :user
-    has_many :comments
+    has_many :comments, as: :commentable
 end

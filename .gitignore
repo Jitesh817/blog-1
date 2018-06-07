@@ -7,20 +7,23 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+api/log/*
+api/tmp/*
 !/log/.keep
 !/tmp/.keep
+ui/node_modules
+ui/dist
+ui/.tmp
+ui/.sass-cache
+ui/bower_components
+ui/package-lock.json
+ui/.idea
 
-# Ignore uploaded files in development
-/storage/*
-
-.byebug_history
-
-# Ignore master key for decrypting credentials and more.
-/config/master.key
+# Ignore Byebug command history file.
+/api/.byebug_history
+/api/config/secrets.yml
+/api/config/mongoid.yml
+/api/test/*
+/api/.idea/
+/api/Gemfile.lock

@@ -3,18 +3,23 @@ class Api::CommentsController < ApplicationController
 	before_action :authenticate_user
 
 	def index
-		render json: Comment.all
+		commentable = Post.find(params[:id])
+		# comments = commentable.comments
+		comments = Comment.where(commentable: commentable)
+		render json: comments
+		# render json: Comment.all
 	end
 	def create
-		if params[:parent_id]
-			parent_comment = Comment.find(params[:parent_id])
+		if params[:comment_id]
+			commentable = Comment.find(params[:comment_id])
 		else
-			comment = Comment.new(user_id: current_user.id, post_id: params[:id], parent_comment: nil)
+			commentable = Post.find(params[:post_id])
 		end
+		comment = Comment.create(commentable: commentable, text: params[:text], user_id: current_user.id)
 		if comment.save
 			render json: comment
 		else
-			render json: comment.errors
+			render json: {errors: comment.errors}, status: 400
 		end
 	end
 
